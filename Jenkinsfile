@@ -8,12 +8,14 @@ node {
     }
 
     stage('Build image') {
-        // app = docker.build("kennedydocker/resume-nginx")
-        sh 'docker build -t kennedydocker/resume-nginx .'
+        app = docker.build("kennedydocker/resume-nginx")
+        // sh 'docker build -t kennedydocker/resume-nginx .'
     }
 
     stage('Test image') {
+        app.inside {
             sh 'echo "Tests passed"'
+        }
     }
 
     stage('Push image') {
