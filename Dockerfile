@@ -1,7 +1,10 @@
-FROM nginx:latest
+FROM --platform=linux/amd64 node:latest
 
-COPY app /usr/share/nginx/html
+WORKDIR /usr/src/app
+
+COPY app .
+
+RUN npm install
 
 EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "server.js"]
