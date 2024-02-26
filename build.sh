@@ -27,7 +27,7 @@ docker push "$DOCKER_IMAGE"
 echo "Image version: $VERSION"
 echo "Image full path: $DOCKER_IMAGE"
 
-# Git 
-git add .
-git commit -m "Update image version to $VERSION"
-git push origin main
+# # Git 
+# git add .
+# git commit -m "Update image version to $VERSION"
+# git push origin main
